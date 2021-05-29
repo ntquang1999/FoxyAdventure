@@ -7,7 +7,7 @@ public class SliderControllerPauseMenu : MonoBehaviour
 {
     private GameMaster gm;
     public Slider slider;
-    BackgroundMusic music;
+    public BackgroundMusic music;
     // Start is called before the first frame update
     void Start()
     {
