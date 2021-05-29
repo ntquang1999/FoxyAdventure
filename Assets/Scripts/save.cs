@@ -9,6 +9,7 @@ public class save : MonoBehaviour
 
     public int deathCount;
     public string stage;
+    public float volume;
 
     void Start()
     {
@@ -23,7 +24,7 @@ public class save : MonoBehaviour
         if (File.Exists(destination)) file = File.OpenWrite(destination);
         else file = File.Create(destination);
 
-        Data data = new Data(deathCount, stage);
+        Data data = new Data(deathCount, stage, volume);
         BinaryFormatter bf = new BinaryFormatter();
         bf.Serialize(file, data);
         file.Close();
@@ -47,6 +48,7 @@ public class save : MonoBehaviour
 
         deathCount = data.deathCounter;
         stage = data.stage;
+        volume = data.volume;
     }
 
 }

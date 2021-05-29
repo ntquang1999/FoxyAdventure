@@ -8,6 +8,7 @@ public class WorldClear : MonoBehaviour
     public float timer = 4;
     private GameMaster gm;
     private save saver;
+    public BackgroundMusic music;
 
     // Start is called before the first frame update
     void Start()
@@ -15,6 +16,7 @@ public class WorldClear : MonoBehaviour
         gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
         saver = GameObject.FindGameObjectWithTag("GM").GetComponent<save>();
         gm.activeStage = "Win";
+        music.adjustVolume(gm.volume);
     }
 
     // Update is called once per frame

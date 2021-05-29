@@ -1,28 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class reloadScene : MonoBehaviour
+public class SliderControllerPauseMenu : MonoBehaviour
 {
-    public float timer = 2;
     private GameMaster gm;
-    public BackgroundMusic music;
+    public Slider slider;
+    BackgroundMusic music;
     // Start is called before the first frame update
     void Start()
     {
         gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
+        slider.minValue = 0;
+        slider.maxValue = 1;
+        slider.value = gm.volume;
+    }
+
+    public void onValueChange()
+    {
+        gm.volume = slider.value;
         music.adjustVolume(gm.volume);
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-        timer -= Time.fixedDeltaTime;
-        if (timer <= 0)
-        {
-            gm.DeathCounter--;
-            SceneManager.LoadScene(gm.activeStage);
-        }
+
     }
 }

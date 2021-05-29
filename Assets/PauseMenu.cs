@@ -64,20 +64,13 @@ public class PauseMenu : MonoBehaviour
         GameIsPause = false;
     }
 
-    public void QuitGame()
-    {
-        Debug.Log("Quitting...");
-        saver.deathCount = gm.DeathCounter;
-        saver.stage = gm.activeStage;
-        saver.SaveFile();
-        Application.Quit();
-    }
 
     public void Menu()
     {
         gm.stageComplete = true;
         saver.deathCount = gm.DeathCounter;
         saver.stage = gm.activeStage;
+        saver.volume = gm.volume;
         saver.SaveFile();
         GameIsPause = false;
         Time.timeScale = 1;

@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 134963633}
   - component: {fileID: 134963635}
   - component: {fileID: 134963636}
+  - component: {fileID: 134963637}
   m_Layer: 0
   m_Name: dao-1476732852003
   m_TagString: Untagged
@@ -220,6 +221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 4
+  music: {fileID: 134963637}
 --- !u!82 &134963636
 AudioSource:
   m_ObjectHideFlags: 0
@@ -316,6 +318,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &134963637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134963632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fab743e94dadf5e4d9a28828b1d52926, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1575369958
 GameObject:
   m_ObjectHideFlags: 0
