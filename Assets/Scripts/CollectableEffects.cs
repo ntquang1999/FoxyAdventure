@@ -38,7 +38,7 @@ public class CollectableEffects : MonoBehaviour
                 controller.m_JumpForce += 300;
                 break;
             case "shroom":
-                foxy.currentHP--;
+                foxy.runSpeed -= 20;
                 break;
         }
     }
@@ -51,6 +51,9 @@ public class CollectableEffects : MonoBehaviour
                 break;
             case "gem":
                 controller.m_JumpForce -= 300;
+                break;
+            case "shroom":
+                foxy.runSpeed += 20;
                 break;
         }
     }

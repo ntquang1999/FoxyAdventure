@@ -23,6 +23,7 @@ public class FallWall : MonoBehaviour
             GetComponent<Rigidbody2D>().simulated = true;
             transform.gameObject.tag = "MapLethals";
             GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+            GetComponent<BoxCollider2D>().enabled = false;
         }
     }
 
@@ -32,6 +33,7 @@ public class FallWall : MonoBehaviour
         {
             transform.gameObject.tag = "Map";
             GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition;
+            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;           
             Destroy(GetComponent<Rigidbody2D>());
         }
     }

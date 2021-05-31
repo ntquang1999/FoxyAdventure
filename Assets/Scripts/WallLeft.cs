@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WallLeft : MonoBehaviour
 {
-    Vector2 temp;
+    public Vector2 temp;
     // Start is called before the first frame update
     void Start()
     {

@@ -16,6 +16,10 @@ TagManager:
   - MapInteractors
   - InvisibleTrigger
   - Canvas
+  - Bottom
+  - beforeDead
+  - Frog
+  - InvisibleSpike
   layers:
   - Default
   - TransparentFX
@@ -28,7 +32,7 @@ TagManager:
   - Collectable
   - InvisibleMap
   - Borders
-  - 
+  - Foot
   - 
   - 
   - 

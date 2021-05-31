@@ -131,12 +131,44 @@ public class Foxy : MonoBehaviour
         {
             collision.gameObject.GetComponent<TilemapCollider2D>().enabled = true;
         }
+        if (collision.CompareTag("InvisibleSpike"))
+        {
+            collision.gameObject.GetComponent<BoxCollider2D>().enabled = true;
+            collision.gameObject.GetComponent<Renderer>().sortingLayerName = "Map";
+            collision.gameObject.tag = "MapLethals";
+        }
+        
+        if (collision.CompareTag("Bottom"))
+        {
+            currentHP--; 
+        }
+
+        if (collision.CompareTag("Enemies"))
+        {
+            collision.gameObject.tag = "beforeDead";
+            GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+            GetComponent<Rigidbody2D>().angularVelocity = 0f;
+            GetComponent<Rigidbody2D>().AddForce(transform.up * 10, ForceMode2D.Impulse);
+            Destroy(collision.gameObject);
+        }
+
+        if (collision.CompareTag("Frog"))
+        {
+            GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+            GetComponent<Rigidbody2D>().angularVelocity = 0f;
+            GetComponent<Rigidbody2D>().AddForce(transform.up * 40, ForceMode2D.Impulse);
+        }
+
 
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
         onLanding();
+        if (collision.gameObject.tag == "beforeDead")
+        {
+            Destroy(collision.gameObject);
+        }
         if (collision.gameObject.tag == "Enemies")
         {
             currentHP--;
@@ -161,5 +193,4 @@ public class Foxy : MonoBehaviour
         }
 
     }
-
 }
