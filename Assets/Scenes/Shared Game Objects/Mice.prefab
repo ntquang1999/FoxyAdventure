@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 2294862431555789955}
   - component: {fileID: 2294862431555789978}
   m_Layer: 7
-  m_Name: Mice 1
+  m_Name: Mice
   m_TagString: Enemies
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

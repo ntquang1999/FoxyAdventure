@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6279388087637608410}
   - component: {fileID: 5117845553914002874}
   m_Layer: 7
-  m_Name: eagle (4)
+  m_Name: eagle
   m_TagString: Enemies
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -121,6 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 6279388087637608405}
+  animator: {fileID: 0}
   MoveSpeed: -26
   InitialPatrolTime: 2
 --- !u!114 &6279388087637608405
@@ -172,7 +173,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 2
+  m_Constraints: 6
 --- !u!70 &5117845553914002874
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

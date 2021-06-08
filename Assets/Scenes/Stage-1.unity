@@ -8086,6 +8086,18 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 1.3856794
       objectReference: {fileID: 0}
+    - target: {fileID: 223036342307608431, guid: 2f2b05d05810ad440baa6674dfc1b2ca, type: 3}
+      propertyPath: m_Size.x
+      value: 1.3919258
+      objectReference: {fileID: 0}
+    - target: {fileID: 223036342307608431, guid: 2f2b05d05810ad440baa6674dfc1b2ca, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.0018841028
+      objectReference: {fileID: 0}
+    - target: {fileID: 223036342307608431, guid: 2f2b05d05810ad440baa6674dfc1b2ca, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 1.3856794
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f2b05d05810ad440baa6674dfc1b2ca, type: 3}
 --- !u!1 &1778594452

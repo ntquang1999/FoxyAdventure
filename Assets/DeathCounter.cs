@@ -11,7 +11,7 @@ public class DeathCounter : MonoBehaviour
     void Start()
     {
         gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
-        counter.text = "You died " + gm.DeathCounter + " times!";
+        counter.text = "You died " + -gm.DeathCounter + " times!";
     }
 
     // Update is called once per frame

@@ -5,7 +5,7 @@ using UnityEngine;
 public class AudioController : MonoBehaviour
 {
     private static AudioController instance;
-    public static AudioClip startSound, jumpSound, jumpHSound, powerUpSound, gameOverSound, dieSound, pauseSound, stageClearSound, worldClearSound;
+    public static AudioClip startSound, stompSound, jumpSound, jumpHSound, powerUpSound, gameOverSound, dieSound, pauseSound, stageClearSound, worldClearSound;
     static AudioSource audiosource;
     // Start is called before the first frame update
 
@@ -30,7 +30,7 @@ public class AudioController : MonoBehaviour
         pauseSound = Resources.Load<AudioClip>("Sounds/smb_pause");
         stageClearSound = Resources.Load<AudioClip>("Sounds/smb_stage_clear");
         worldClearSound = Resources.Load<AudioClip>("Sounds/smb_world_clear");
-
+        stompSound = Resources.Load<AudioClip>("Sounds/smb_stomp");
         audiosource = GetComponent<AudioSource>();
     }
 
@@ -71,6 +71,9 @@ public class AudioController : MonoBehaviour
                 break;
             case "worldClr":
                 audiosource.PlayOneShot(worldClearSound);
+                break;
+            case "stomp":
+                audiosource.PlayOneShot(stompSound);
                 break;
         }
     }

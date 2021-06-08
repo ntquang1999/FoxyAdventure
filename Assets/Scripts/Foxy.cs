@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
+using System;
 
 public class Foxy : MonoBehaviour
 {
@@ -149,7 +150,18 @@ public class Foxy : MonoBehaviour
             GetComponent<Rigidbody2D>().velocity = Vector3.zero;
             GetComponent<Rigidbody2D>().angularVelocity = 0f;
             GetComponent<Rigidbody2D>().AddForce(transform.up * 10, ForceMode2D.Impulse);
-            Destroy(collision.gameObject);
+            AudioController.PlaySound("stomp");
+            collision.gameObject.GetComponent<Animator>().SetBool("isDead", true);
+            collision.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+            try
+            {
+                collision.gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
+                collision.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            } catch (Exception e)
+            {
+                Debug.Log(e);
+            }
+            Destroy(collision.gameObject, 1);
         }
 
         if (collision.CompareTag("Frog"))
@@ -167,7 +179,7 @@ public class Foxy : MonoBehaviour
         onLanding();
         if (collision.gameObject.tag == "beforeDead")
         {
-            Destroy(collision.gameObject);
+            //Destroy(collision.gameObject);
         }
         if (collision.gameObject.tag == "Enemies")
         {
