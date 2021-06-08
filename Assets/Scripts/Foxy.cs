@@ -161,7 +161,7 @@ public class Foxy : MonoBehaviour
             {
                 Debug.Log(e);
             }
-            Destroy(collision.gameObject, 1);
+            Destroy(collision.gameObject, 0.5f);
         }
 
         if (collision.CompareTag("Frog"))
